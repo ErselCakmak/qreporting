@@ -1,0 +1,90 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout_login.cshtml";
+    ViewData["Title"] = "Quality Reporting";
+}
+
+<div>
+
+    <div class="login-lang">
+        <div class="d-flex country ">
+            <a class="nav-link icon text-center btn-pill btn-white p-5" data-bs-target="#country-selector" data-bs-toggle="modal">
+                <i class="fe fe-globe"></i><span class="fs-16 d-xl-block"> @(ViewBag.SelectedCulture == "en-US" ? "English" : "Türkçe")</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="page">
+
+        <div class="">
+            <div class="col col-login mx-auto mt-1">
+                <div class="text-center">
+                    @if (ViewBag.ThemeMode == "dark")
+                    {
+                        <img src="~/images/logo/white-logo.svg" class="header-brand-img" alt="">
+                    }
+                    else
+                    {
+                        <img src="~/images/logo/black-logo.svg" class="header-brand-img" alt="">
+                    }
+                    
+                </div>
+            </div>
+            <div class="container-login100">
+                <div class="wrap-login100 p-6 col-xl-3 col-lg-8 col-md-8 col-sm-8">
+                    <form class="login100-form validate-form" action="@Url.Action("Login")" method="post">
+
+                        <span class="login100-form-title pb-5">
+                            @ViewBag.LocalizedValues["Welcome"]
+                        </span>
+                        <div class="panel panel-primary">
+
+                            <div class="wrap-input100 validate-input input-group" data-bs-validate="Valid email is required: ex@abc.xyz">
+                                <a href="javascript:void(0)" class="input-group-text bg-white text-muted">
+                                    <i class="zmdi zmdi-email text-muted" aria-hidden="true"></i>
+                                </a>
+                                <input class="input100 border-start-0 form-control ms-0" type="email" placeholder="@ViewBag.LocalizedValues["Email"]">
+                            </div>
+                            <div class="wrap-input100 validate-input input-group" id="Password-toggle">
+                                <a href="javascript:void(0)" class="input-group-text bg-white text-muted">
+                                    <i class="zmdi zmdi-eye text-muted" aria-hidden="true"></i>
+                                </a>
+                                <input class="input100 border-start-0 form-control ms-0" type="password" placeholder="@ViewBag.LocalizedValues["Password"]">
+                            </div>
+                            <div class="row pt-3">
+                                <div class="col-md-6">
+                                    <label class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" name="remember-me" value="0">
+                                        <span class="custom-control-label">@ViewBag.LocalizedValues["RememberMe"]</span>
+                                    </label>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="text-end">
+                                        <p class="mb-0"><a href="forgot-password.html" class="text-primary ms-1">@ViewBag.LocalizedValues["ForgotPassword"]</a></p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="container-login100-form-btn">
+                                <button type="submit" class="login100-form-btn btn-primary">@ViewBag.LocalizedValues["Login"]</button>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-3 mx-auto">
+            <p class="text-center text-muted">@ViewBag.LocalizedValues["Support"]</p>
+            <p class="text-center text-muted"><a href="mailto:support@qreporting.com">support@qreporting.com</a></p>
+        </div>
+    </div>
+
+
+</div>
+
+
+

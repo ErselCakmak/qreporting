@@ -1,0 +1,466 @@
+﻿<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>@ViewData["Title"] - @ViewBag.page</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="~/images/brand/favicon.ico" />
+    <link id="style" href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/dark-style.css" rel="stylesheet" />
+    <link href="~/css/transparent-style.css" rel="stylesheet">
+    <link href="~/css/skin-modes.css" rel="stylesheet" />
+    <link href="~/css/icons.css" rel="stylesheet" />
+    <link id="theme" rel="stylesheet" type="text/css" media="all" href="~/vendor/colors/color1.css" />
+
+</head>
+<body class="app sidebar-mini ltr">
+    <div id="global-loader">
+        <img src="~/images/loader.svg" class="loader-img" alt="Loader">
+    </div>
+
+    <div class="page">
+        <div class="page-main">
+
+            <div class="app-header header sticky">
+                <div class="container-fluid main-container">
+                    <div class="d-flex">
+                        <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar" href="javascript:void(0)"></a>
+
+                        <a class="logo-horizontal " href="index.html">
+                            <img src="~/images/logo/white-logo.svg" class="header-brand-img desktop-logo w-20" alt="logo">
+                            <img src="~/images/logo/black-logo.svg" class="header-brand-img light-logo1 w-20" alt="logo">
+                        </a>
+
+
+                        <div class="d-flex order-lg-2 ms-auto header-right-icons">
+
+                            <button class="navbar-toggler navresponsive-toggler d-lg-none ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon fe fe-more-vertical"></span>
+                            </button>
+                            <div class="navbar navbar-collapse responsive-navbar p-0">
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+                                    <div class="d-flex order-lg-2">
+                                        <div class="dropdown d-lg-none d-flex">
+                                            <a href="javascript:void(0)" class="nav-link icon" data-bs-toggle="dropdown">
+                                                <i class="fe fe-search"></i>
+                                            </a>
+                                            <div class="dropdown-menu header-search dropdown-menu-start">
+                                                <div class="input-group w-100 p-2">
+                                                    <input type="text" class="form-control" placeholder="Search....">
+                                                    <div class="input-group-text btn btn-primary">
+                                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex country">
+                                            <a class="nav-link icon text-center" data-bs-target="#country-selector" data-bs-toggle="modal">
+                                                <i class="fe fe-globe"></i><span class="fs-16 ms-2 d-none d-xl-block">@(ViewBag.SelectedCulture == "en-US" ? "English" : "Türkçe")</span>
+                                            </a>
+                                        </div>
+
+                                        <div class="dropdown d-flex">
+                                            <a class="nav-link icon theme-layout nav-link-bg layout-setting">
+                                                <span class="dark-layout"><i class="fe fe-moon"></i></span>
+                                                <span class="light-layout"><i class="fe fe-sun"></i></span>
+                                            </a>
+                                        </div>
+
+                                        <div class="dropdown d-flex">
+                                            <a class="nav-link icon full-screen-link nav-link-bg">
+                                                <i class="fe fe-minimize fullscreen-button"></i>
+                                            </a>
+                                        </div>
+
+                                        <div class="dropdown  d-flex notifications">
+                                            <a class="nav-link icon" data-bs-toggle="dropdown">
+                                                <i class="fe fe-bell"></i><span class=" pulse"></span>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                                <div class="drop-heading border-bottom">
+                                                    <div class="d-flex">
+                                                        <h6 class="mt-1 mb-0 fs-16 fw-semibold text-dark">Notifications</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="notifications-menu">
+                                                    <a class="dropdown-item d-flex" href="notify-list.html">
+                                                        <div class="me-3 notifyimg  bg-primary brround box-shadow-primary">
+                                                            <i class="fe fe-mail"></i>
+                                                        </div>
+                                                        <div class="mt-1">
+                                                            <h5 class="notification-label mb-1">New Application received</h5>
+                                                            <span class="notification-subtext">3 days ago</span>
+                                                        </div>
+                                                    </a>
+                                                    <a class="dropdown-item d-flex" href="notify-list.html">
+                                                        <div class="me-3 notifyimg  bg-secondary brround box-shadow-secondary">
+                                                            <i class="fe fe-check-circle"></i>
+                                                        </div>
+                                                        <div class="mt-1">
+                                                            <h5 class="notification-label mb-1">Project has been approved</h5>
+                                                            <span class="notification-subtext">2 hours ago</span>
+                                                        </div>
+                                                    </a>
+                                                    <a class="dropdown-item d-flex" href="notify-list.html">
+                                                        <div class="me-3 notifyimg  bg-success brround box-shadow-success">
+                                                            <i class="fe fe-shopping-cart"></i>
+                                                        </div>
+                                                        <div class="mt-1">
+                                                            <h5 class="notification-label mb-1">Your Product Delivered</h5>
+                                                            <span class="notification-subtext">30 min ago</span>
+                                                        </div>
+                                                    </a>
+                                                    <a class="dropdown-item d-flex" href="notify-list.html">
+                                                        <div class="me-3 notifyimg bg-pink brround box-shadow-pink">
+                                                            <i class="fe fe-user-plus"></i>
+                                                        </div>
+                                                        <div class="mt-1">
+                                                            <h5 class="notification-label mb-1">Friend Requests</h5>
+                                                            <span class="notification-subtext">1 day ago</span>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="dropdown-divider m-0"></div>
+                                                <a href="notify-list.html" class="dropdown-item text-center p-3 text-muted">View all Notification</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="dropdown  d-flex message">
+                                            <a class="nav-link icon text-center" data-bs-toggle="dropdown">
+                                                <i class="fe fe-message-square"></i><span class="pulse-danger"></span>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                                <div class="drop-heading border-bottom">
+                                                    <div class="d-flex">
+                                                        <h6 class="mt-1 mb-0 fs-16 fw-semibold text-dark">You have 5 Messages</h6>
+                                                        <div class="ms-auto">
+                                                            <a href="javascript:void(0)" class="text-muted p-0 fs-12">make all unread</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="message-menu">
+                                                    <a class="dropdown-item d-flex" href="chat.html">
+                                                        <span class="avatar avatar-md brround me-3 align-self-center cover-image" data-bs-image-src="~/images/users/1.jpg"></span>
+                                                        <div class="wd-90p">
+                                                            <div class="d-flex">
+                                                                <h5 class="mb-1">Peter Theil</h5>
+                                                                <small class="text-muted ms-auto text-end">
+                                                                    6:45 am
+                                                                </small>
+                                                            </div>
+                                                            <span>Commented on file Guest list....</span>
+                                                        </div>
+                                                    </a>
+                                                    <a class="dropdown-item d-flex" href="chat.html">
+                                                        <span class="avatar avatar-md brround me-3 align-self-center cover-image" data-bs-image-src="~/images/users/15.jpg"></span>
+                                                        <div class="wd-90p">
+                                                            <div class="d-flex">
+                                                                <h5 class="mb-1">Abagael Luth</h5>
+                                                                <small class="text-muted ms-auto text-end">
+                                                                    10:35 am
+                                                                </small>
+                                                            </div>
+                                                            <span>New Meetup Started......</span>
+                                                        </div>
+                                                    </a>
+                                                    <a class="dropdown-item d-flex" href="chat.html">
+                                                        <span class="avatar avatar-md brround me-3 align-self-center cover-image" data-bs-image-src="~/images/users/12.jpg"></span>
+                                                        <div class="wd-90p">
+                                                            <div class="d-flex">
+                                                                <h5 class="mb-1">Brizid Dawson</h5>
+                                                                <small class="text-muted ms-auto text-end">
+                                                                    2:17 pm
+                                                                </small>
+                                                            </div>
+                                                            <span>Brizid is in the Warehouse...</span>
+                                                        </div>
+                                                    </a>
+                                                    <a class="dropdown-item d-flex" href="chat.html">
+                                                        <span class="avatar avatar-md brround me-3 align-self-center cover-image" data-bs-image-src="~/images/users/4.jpg"></span>
+                                                        <div class="wd-90p">
+                                                            <div class="d-flex">
+                                                                <h5 class="mb-1">Shannon Shaw</h5>
+                                                                <small class="text-muted ms-auto text-end">
+                                                                    7:55 pm
+                                                                </small>
+                                                            </div>
+                                                            <span>New Product Realease......</span>
+                                                        </div>
+                                                    </a>
+
+                                                </div>
+                                                <div class="dropdown-divider m-0"></div>
+                                                <a href="javascript:void(0)" class="dropdown-item text-center p-3 text-muted">See all Messages</a>
+                                            </div>
+                                        </div>
+
+                                        <div class="dropdown d-flex profile-1">
+                                            <a href="javascript:void(0)" data-bs-toggle="dropdown" class="nav-link leading-none d-flex">
+                                                <img src="~/images/users/21.jpg" alt="profile-user" class="avatar  profile-user brround cover-image">
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                                <div class="drop-heading">
+                                                    <div class="text-center">
+                                                        <h5 class="text-dark mb-0 fs-14 fw-semibold">Percy Kewshun</h5>
+                                                        <small class="text-muted">Senior Admin</small>
+                                                    </div>
+                                                </div>
+                                                <div class="dropdown-divider m-0"></div>
+                                                <a class="dropdown-item" href="profile.html">
+                                                    <i class="dropdown-icon fe fe-user"></i> Profile
+                                                </a>
+                                                <a class="dropdown-item" href="email-inbox.html">
+                                                    <i class="dropdown-icon fe fe-mail"></i> Inbox
+                                                    <span class="badge bg-danger rounded-pill float-end">5</span>
+                                                </a>
+                                                <a class="dropdown-item" href="lockscreen.html">
+                                                    <i class="dropdown-icon fe fe-lock"></i> Lockscreen
+                                                </a>
+                                                <a class="dropdown-item" href="login.html">
+                                                    <i class="dropdown-icon fe fe-alert-circle"></i> Sign out
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sticky">
+                <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
+                <div class="app-sidebar">
+                    <div class="side-header">
+                        <a class="header-brand1" href="javascript:void(0)">
+                            <img src="~/images/logo/white-logo.svg" class="header-brand-img desktop-logo w-50" alt="logo">
+                            <img src="~/images/logo/white-q-logo.svg" class="header-brand-img toggle-logo w-100" alt="logo">
+                            <img src="~/images/logo/black-q-logo.svg" class="header-brand-img light-logo w-100" alt="logo">
+                            <img src="~/images/logo/black-logo.svg" class="header-brand-img light-logo1 w-50" alt="logo">
+                        </a>
+
+                    </div>
+                    <div class="main-sidemenu">
+                        <div class="slide-left disabled" id="slide-left">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 fill="#7b8191" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" />
+                            </svg>
+                        </div>
+                        <ul class="side-menu">
+                            <li class="sub-category">
+                                <h3>Anasayfa</h3>
+                            </li>
+                            <li class="slide">
+                                <a class="side-menu__item" data-bs-toggle="slide" asp-controller="Dashboard" asp-action="Index">
+                                    <i class="side-menu__icon fe fe-activity"></i><span class="side-menu__label">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="sub-category">
+                                <h3>İş Emirleri</h3>
+                            </li>
+                            <li class="slide">
+                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)">
+                                    <i class="side-menu__icon fe fe-check-square"></i><span class="side-menu__label">İş Listesi</span>
+                                </a>
+                            </li>
+                            <li class="sub-category">
+                                <h3>Personel Yönetimi</h3>
+                            </li>
+                            <li class="slide">
+                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)">
+                                    <i class="side-menu__icon fe fe-users"></i><span class="side-menu__label">Personel Tanımları</span>
+                                </a>
+                            </li>
+
+                            <li class="sub-category">
+                                <h3>Uygulama Yönetimi</h3>
+                            </li>
+                            <li class="slide">
+                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)">
+                                    <i class="side-menu__icon fe fe-smartphone"></i>
+                                    <span class="side-menu__label">Mobil Uygulamalar</span><i class="angle fe fe-chevron-right"></i>
+                                </a>
+                                <ul class="slide-menu">
+                                    <li class="sub-slide">
+                                        <a class="sub-side-menu__item" data-bs-toggle="sub-slide" href="javascript:void(0)"><span class="sub-side-menu__label">Contract Quality App</span><i class="sub-angle fe fe-chevron-right"></i></a>
+                                        <ul class="sub-slide-menu">
+                                            <li><a class="sub-slide-item" href="javascript:void(0)">Personel QR Kodu</a></li>
+                                            <li><a class="sub-slide-item" href="javascript:void(0)">Firma QR Kodu</a></li>
+                                            <li><a class="sub-slide-item" href="javascript:void(0)">Anlık Bildirim</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-slide">
+                                        <a class="sub-side-menu__item" data-bs-toggle="sub-slide" href="javascript:void(0)"><span class="sub-side-menu__label">Contract Plus</span><i class="sub-angle fe fe-chevron-right"></i></a>
+                                        <ul class="sub-slide-menu">
+                                            <li><a class="sub-slide-item" href="javascript:void(0)">Anlık Bildirim</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+                            <li class="sub-category">
+                                <h3>Muhasebe Yönetimi</h3>
+                            </li>
+                            <li class="slide">
+                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)">
+                                    <i class="side-menu__icon fe fe-layers"></i><span class="side-menu__label">Muhasebe Modülleri</span><i class="angle fe fe-chevron-right"></i>
+                                </a>
+                                <ul class="slide-menu">
+                                    <li><a href="javascript:void(0)" class="slide-item"> Puantajlar</a></li>
+                                    <li><a href="javascript:void(0)" class="slide-item"> Faturalar</a></li>
+                                    <li><a href="javascript:void(0)" class="slide-item"> Vergi Oranları</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="sub-category">
+                                <h3>Raporlar</h3>
+                            </li>
+                            <li class="slide">
+                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)">
+                                    <i class="side-menu__icon fe fe-pie-chart"></i><span class="side-menu__label">Rapor Modülleri</span><i class="angle fe fe-chevron-right"></i>
+                                </a>
+                                <ul class="slide-menu">
+                                    <li><a href="javascript:void(0)" class="slide-item"> Günlük Kontrol Raporları</a></li>
+                                    <li><a href="javascript:void(0)" class="slide-item"> Verimlilik Raporu</a></li>
+                                    <li><a href="javascript:void(0)" class="slide-item"> Fatura Raporu</a></li>
+                                    <li><a href="javascript:void(0)" class="slide-item"> PDKS Raporu</a></li>
+                                    <li><a href="javascript:void(0)" class="slide-item"> Aylık Puantaj Raporu</a></li>
+                                </ul>
+                            </li>
+                            <li class="sub-category">
+                                <h3>CRM</h3>
+                            </li>
+                            <li class="slide">
+                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)">
+                                    <i class="side-menu__icon fe fe-star"></i><span class="side-menu__label">CRM Modülleri</span><i class="angle fe fe-chevron-right"></i>
+                                </a>
+                                <ul class="slide-menu">
+                                    <li><a href="javascript:void(0)" class="slide-item"> Teklifler</a></li>
+                                    <li><a href="javascript:void(0)" class="slide-item"> Ziyaretler</a></li>
+                                </ul>
+                            </li>
+                            <li class="sub-category">
+                                <h3>İletişim</h3>
+                            </li>
+                            <li class="slide">
+                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)">
+                                    <i class="side-menu__icon fe fe-message-circle"></i><span class="side-menu__label">Destek</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                        <div class="slide-right" id="slide-right">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191"
+                                 width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-content app-content mt-0">
+                <div class="side-app">
+                    <div class="main-container container-fluid">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="country-selector">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content country-select-modal">
+                        <div class="modal-header">
+                            <h6 class="modal-title">@ViewBag.LocalizedValues["SelectLanguage"]</h6><button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <ul class="row p-3">
+                                <li class="col-lg-6 mb-2">
+                                    <a asp-controller="Dashboard" asp-action="ChangeLanguage" asp-route-culture="tr-TR" class="btn btn-country btn-lg btn-block @(ViewBag.SelectedCulture == "tr-TR" || ViewBag.SelectedCulture == null ? "active" : "")">
+                                        <span class="country-selector">
+                                            <img alt="" src="~/images/flags/turkey.jpg" class="me-3 language">
+                                        </span>Türkçe
+                                    </a>
+                                </li>
+                                <li class="col-lg-6 mb-2">
+                                    <a asp-controller="Dashboard" asp-action="ChangeLanguage" asp-route-culture="en-US" class="btn btn-country btn-lg btn-block @(ViewBag.SelectedCulture == "en-US" ? "active" : "")">
+                                        <span class="country-selector">
+                                            <img alt="" src="~/images/flags/us_flag.jpg" class="me-3 language">
+                                        </span>English
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row align-items-center flex-row-reverse">
+                <div class="col-md-12 col-sm-12 text-center">
+                    @{
+                        int currentYear = DateTime.Now.Year;
+                        int startYear = 2023;
+
+                        string copyrightText = currentYear > startYear ? $"{startYear} - {currentYear}" : currentYear.ToString();
+                    }
+                    Copyright © @copyrightText <a href="javascript:void(0)">Quality Reporting</a>. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/js/popper.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.sparkline.min.js"></script>
+    <script src="~/js/sticky.js"></script>
+    <script src="~/js/circle-progress.min.js"></script>
+    <script src="~/vendor/peitychart/jquery.peity.min.js"></script>
+    <script src="~/vendor/peitychart/peitychart.init.js"></script>
+    <script src="~/vendor/sidebar/sidebar.js"></script>
+    <script src="~/vendor/chart/Chart.bundle.js"></script>
+    <script src="~/vendor/chart/rounded-barchart.js"></script>
+    <script src="~/vendor/chart/utils.js"></script>
+    <script src="~/vendor/select2/select2.full.min.js"></script>
+    <script src="~/vendor/datatable/js/jquery.dataTables.min.js"></script>
+    <script src="~/vendor/datatable/js/dataTables.bootstrap5.js"></script>
+    <script src="~/vendor/datatable/dataTables.responsive.min.js"></script>
+    <script src="~/js/apexcharts.js"></script>
+    <script src="~/vendor/apexchart/irregular-data-series.js"></script>
+    <script src="~/vendor/charts-c3/d3.v5.min.js"></script>
+    <script src="~/vendor/charts-c3/c3-chart.js"></script>
+    <script src="~/js/charts.js"></script>
+
+    <script src="~/vendor/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="~/vendor/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="~/vendor/sidemenu/sidemenu.js"></script>
+    <script src="~/js/index1.js"></script>
+    <script src="~/js/themeColors.js"></script>
+    <script src="~/js/custom.js"></script>
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+
+</body>
+
+</html>
