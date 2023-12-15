@@ -1,5 +1,4 @@
-﻿using System;
-namespace qreporting.Services
+﻿namespace qreporting.Services
 {
 	public class SharedResource
 	{

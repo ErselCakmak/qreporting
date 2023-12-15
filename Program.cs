@@ -4,11 +4,15 @@ using System.Globalization;
 using System.Reflection;
 using qreporting.Services;
 using Microsoft.Extensions.Options;
+using qreporting.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
 #region Localizer
-builder.Services.AddSingleton<LanguageService>();
+builder.Services.AddSingleton<Type>(typeof(SharedResource));
+builder.Services.AddSingleton<LocalizationService>();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddSingleton<CookieHelper>();
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 builder.Services.AddMvc().AddViewLocalization().AddDataAnnotationsLocalization(options =>
     options.DataAnnotationLocalizerProvider = (type, factory) =>

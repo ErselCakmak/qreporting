@@ -12,11 +12,13 @@
     <None Remove="Services\" />
     <None Remove="Resources\" />
     <None Remove="Views\Dashboard\" />
+    <None Remove="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
     <Folder Include="Resources\" />
     <Folder Include="Views\Dashboard\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Resources\SharedResource.tr-TR.resx">

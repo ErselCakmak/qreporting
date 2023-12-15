@@ -1,3 +1,6 @@
+
+@model LoginViewModel
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -5,8 +8,8 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>@ViewData["Title"] - @ViewBag.LocalizedValues["Login"]</title>
-    
+    <title>@ViewData["Title"] - @Model.LocalizedValues["Login"]</title>
+
     <link rel="shortcut icon" type="image/x-icon" href="~/images/brand/favicon.ico" />
     <link id="style" href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/css/style.css" rel="stylesheet" />
@@ -28,21 +31,21 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content country-select-modal">
                 <div class="modal-header">
-                    <h6 class="modal-title">@ViewBag.LocalizedValues["SelectLanguage"]</h6><button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button">
+                    <h6 class="modal-title">@Model.LocalizedValues["SelectLanguage"]</h6><button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <ul class="row p-3">
                         <li class="col-lg-6 mb-2">
-                            <a asp-controller="Login" asp-action="ChangeLanguage" asp-route-culture="tr-TR" class="btn btn-country btn-lg btn-block @(ViewBag.SelectedCulture == "tr-TR" || ViewBag.SelectedCulture == null ? "active" : "")">
+                            <a asp-controller="Login" asp-action="ChangeLanguage" asp-route-culture="tr-TR" class="btn btn-country btn-lg btn-block @(Model.SelectedCulture == "tr-TR" || Model.SelectedCulture == null ? "active" : "")">
                                 <span class="country-selector">
                                     <img alt="" src="~/images/flags/turkey.jpg" class="me-3 language">
                                 </span>Türkçe
                             </a>
                         </li>
                         <li class="col-lg-6 mb-2">
-                            <a asp-controller="Login" asp-action="ChangeLanguage" asp-route-culture="en-US" class="btn btn-country btn-lg btn-block @(ViewBag.SelectedCulture == "en-US" ? "active" : "")">
+                            <a asp-controller="Login" asp-action="ChangeLanguage" asp-route-culture="en-US" class="btn btn-country btn-lg btn-block @(Model.SelectedCulture == "en-US" ? "active" : "")">
                                 <span class="country-selector">
                                     <img alt="" src="~/images/flags/us_flag.jpg" class="me-3 language">
                                 </span>English
@@ -59,7 +62,6 @@
     <script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="~/js/show-password.min.js"></script>
     <script src="~/js/generate-otp.js"></script>
-    <script src="~/vendor/p-scroll/perfect-scrollbar.js"></script>
     <script src="~/js/themeColors.js"></script>
     <script src="~/js/custom.js"></script>
 
